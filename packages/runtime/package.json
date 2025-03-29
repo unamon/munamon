@@ -1,0 +1,31 @@
+{
+  "name": "munamon",
+  "version": "1.0.0",
+  "main": "dist/mumamon.js",
+  "files": [
+    "dist/munamon.js"
+  ],
+  "scripts": {
+    "prepack": "npm run build",
+    "build": "rollup -c",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "test":"vitest",
+    "test:run":"vitest run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "jsdom": "^26.0.0",
+    "rollup": "^4.38.0",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-filesize": "^10.0.0",
+    "vitest": "^3.0.9"
+  }
+}
