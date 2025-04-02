@@ -1,0 +1,20 @@
+body { 
+    background-color: rgb(29, 42, 54);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Archivo",sans-serif;
+}
+.button-create-todo { 
+    transition: all .5s linear;
+}
+.button-create-todo:disabled { 
+    color: rgb(102, 9, 9);
+}
+
+.button { 
+    background-color: azure;
+    border: white;
+    border-radius: 5px;
+}
