@@ -14,7 +14,8 @@ body {
 }
 
 .button { 
+    margin-left: 5px;
     background-color: azure;
     border: white;
-    border-radius: 5px;
+    border-radius: 2px;
 }

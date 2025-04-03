@@ -22,6 +22,7 @@ function renderTodoInReadMode(todo) {
 
     const buttonEl = document.createElement('button')
     buttonEl.textContent = 'Done'
+    buttonEl.classList.add('button')
     buttonEl.addEventListener('click', () => {
         const idx = todos.indexOf(todo);
         removeTodo(idx);
