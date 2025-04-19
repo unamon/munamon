@@ -34,3 +34,10 @@ function mapTextNodes(children) {
         typeof child == 'string' ? hString(child) : child
     })
 }
+
+
+function MessageComponent({level, message= ''}) { 
+    return h('div', {class:`message message-${level}`}, [ 
+        h('p', {}, [message])
+    ])
+}
