@@ -25,7 +25,7 @@ export function createApp(state, view, reducers = {}) {
         if (vdom) { //if previous view exists, unmount it
             destroyDOM(vdom)
         }
-        vdom = view(state) //mount the new view 
+        vdom = view(state, emit) //mount the new view 
         mountDOM(vdom, parentEl)
     }
 
