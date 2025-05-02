@@ -9,6 +9,10 @@ export function createApp(state, view, reducers = {}) {
     const dispatcher = new Dispatcher()
     const subscriptions = [dispatcher.afterEveryCommand(renderApp)] //re-render app after every command
 
+    function emit(eventName,payload) { 
+        dispatcher.dispatch(eventName, payload)
+    }
+
     for (const actionName in reducers) { 
         const reducer = reducers[actionName]
         const subs = dispatcher.subscribe(actionName, (payload) => { 
@@ -25,10 +29,16 @@ export function createApp(state, view, reducers = {}) {
         mountDOM(vdom, parentEl)
     }
 
+
     return {
         mount(_parentEl) { //method to mount the application in the DOM 
             parentEl = _parentEl 
             renderApp()
+        },
+        unmount() {
+            destroyDOM(vdom)
+            vdom=null
+            subscriptions.forEach((unsubscribe) => unsubscribe())
         }
     }
 }
